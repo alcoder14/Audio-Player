@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="ALWebDev">
+    <meta name="description" content="Simple app which lets you import audio files and play them">
+    <meta name="keywords" content="audio player, audio, files, music, web, html, css, javascript">
+    <script src="https://kit.fontawesome.com/3bcff65460.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="audio-app-style.css">
+    <title>Audio Player</title>
+</head>
+<body>
+    <section id="main">
+        <div class="container">
+            <div id="audio-tracks">
+                <div class="audio-track-controls">
+                    <button class="list-control-buttons" id="add_song_btn">Add Song</button>
+                    <button class="list-control-buttons"  id="autoplay">Autoplay</button>
+                    <button class="list-control-buttons"  id="delete_all_btn">Delete All</button>
+                </div>
+                <div id="no_songs_to_show">
+                    <p>No Files To Show</p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="icon-container">
+                <i class="fas fa-solid fa-music"></i>
+            </div>
+            <p id="song-title">Song Title</p>
+            <div class="control-icons">
+                <div class="icon"><i class="fas fa-solid fas fa-forward" id="forward"></i></div>
+                <div class="icon"><i class="fas fa-solid fas fa-play" id="play"></i></div>
+                <div class="icon"><i class="fas fa-solid fas fa-pause" id="pause"></i></div>
+                <div class="icon"><i class="fas fa-solid fas fa-backward" id="backward"></i></div>
+            </div>
+            <div id="timer">
+                <p id="elapsed-time">0:00</p>
+                <p>/</p>
+                <p id="audio-length">0:00</p>
+            </div>
+            <div id="visualizer-container">
+                <div id="progress-line"></div>
+            </div>
+        </div>
+    </section>
+
+    <div id="add-songs-window">
+        <input type="file" id="file-input" accept="audio/mpeg3">
+        <!--<div class="window-container">-->
+            <div class="form">
+                <div class="modal-horizontal">
+                    <button id="choose-audio-btn">Choose Audio</button>
+                    <p id="custom-text">No File Chosen</p>
+                </div>
+                <input type="text" id="audio-name" placeholder="Name Your Audio(optional)">
+                <div class="modal-horizontal">
+                    <button id="add-song">Add To Playlist</button>
+                    <button id="cancel">Cancel</button>
+                </div>
+            </div>
+        <!--</div>-->
+    </div>
+
+    <div id="not-available">
+        <p>The application is not available for smaller screens</p>
+    </div>
+    <script src="audio-app-script.js"></script>
+</body>
+</html>

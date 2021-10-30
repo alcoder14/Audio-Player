@@ -1,0 +1,243 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    overflow-y: hidden;
+}
+#main{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 1009px;
+    background-color: black;
+}
+.container{
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height: 900px;
+}
+#audio-tracks{
+    width: 80%;
+    height: 90vh;
+    background-color: #262626;
+    margin: 40px 0;
+    padding: 20px;
+}
+.audio-track-controls{
+    display: flex;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+#no_songs_to_show{
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: white;
+}
+.list-control-buttons{
+    flex-basis: 33.33%;
+    border: 0;
+    outline: 0;
+    padding: 18px 24px;
+    font-size: 1.7vw;
+    color: white;
+    text-transform: uppercase;
+    background-color: black;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+.list-control-buttons:hover{
+    background-color: #F39A5A;
+    color: black;
+}
+.list-control-buttons:nth-child(1), .list-control-buttons:nth-child(2){
+    border-right: #F39A5A solid 3px;
+}
+
+
+.icon-container{
+    border-radius: 50%;
+    background-color: #F39A5A;
+    width: 23vw;
+    height: 23vw;
+    font-size: 15vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+#song-title{
+    font-size: 2vw;
+    margin-bottom: 30px;
+}
+.control-icons, #timer{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+.icon{
+    font-size: 3vw;
+    color: white;
+    margin: 0 20px;
+    cursor: pointer;
+}
+#timer{
+    font-size: 2.8vw;
+}
+
+/*Visualization bar*/
+
+#visualizer-container{
+    width: 40vw;
+    background-color: #F39A5A;
+    height: 3vh;
+    position: relative;
+}
+#progress-line{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0%;
+    height: 30px;
+    background-color: #3e3e3e;
+}
+
+#add-songs-window{
+    width: 100%;
+    height: 1009px;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+#file-input{
+    display: none;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+}
+.modal-horizontal{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+#custom-text{
+    font-size: 30px;
+    margin: 8px;
+    color: #F39A5A;
+    align-self: center;
+}
+#audio-name{
+    width: 100%;
+    padding: 12px 8px;
+    font-size: 30px;
+    outline: 0;
+
+}
+.form button{
+    border: 0;
+    outline: 0;
+    font-size: 32px;
+    padding: 14px 20px;
+    margin: 18px;
+    cursor: pointer;
+}
+#add-song{
+    background-color: #F39A5A;
+    color: black;
+}
+#cancel{
+    background-color:#262626;
+    color: white;
+}
+
+
+/* JAVASCRIPT-ADDED CLASSES*/
+
+.record-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3e3e3e;
+    padding: 10px;
+    margin: 15px 0;
+    font-size: 30px;
+}
+.name{
+    flex-basis: 70%;
+}
+
+.trash_icon, .play_icon{
+    padding: 5px;
+    margin: 0 5px;
+    font-size: 40px;
+}
+
+.records_icons_container{
+    flex-basis: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /*
+    align-items: center;
+    */
+}
+.record-icon{
+    flex-basis: 15%;
+    align-self: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.record-icon:hover{
+    color: #F39A5A;
+}
+#not-available{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background-color: black;
+    color:white;
+}
+
+@media(max-width: 1000px){
+    #not-available{
+        display: flex;
+    }
+    #main{
+        flex-direction: column;
+        align-items: center;
+        overflow-y: visible;
+    }
+    .container{
+        flex-basis: 100%;
+    }
+    .audio-track-controls{
+        flex-direction: column;
+        align-items: center;
+    }
+}
